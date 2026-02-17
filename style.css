@@ -1,103 +1,75 @@
-/* 기본 설정 */
 * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-body { font-family: 'Noto Sans KR', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
+body {
+  font-family: 'Noto Serif KR', serif;
+  background-color: #f6f3ed;
+  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+  color: #2c3e50; overflow-x: hidden;
+}
 
-/* [1] 인트로 효과 */
+/* [인트로] 편지 봉투 애니메이션 */
 #intro-overlay {
-  position: fixed; inset: 0; z-index: 10000; display: flex; justify-content: center; align-items: center;
-  background: linear-gradient(135deg, #0c4a6e 0%, #075985 100%); transition: all 1s ease-in-out;
+  position: fixed; inset: 0; z-index: 10000; background: #0c1a2b;
+  display: flex; justify-content: center; align-items: center; transition: 0.8s;
 }
 .stars {
   position: absolute; inset: 0; opacity: 0.3;
-  background-image: radial-gradient(circle, #fff 1px, transparent 1px); background-size: 40px 40px;
-  animation: twinkle 4s infinite;
+  background-image: radial-gradient(white 1px, transparent 1px); background-size: 50px 50px;
 }
-.envelope-wrapper { animation: float 3s ease-in-out infinite; width: 90%; max-width: 380px; }
-.letter-card {
-  background: white; padding: 50px 30px; border-radius: 30px; text-align: center;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.3); border: 2px solid #bae6fd;
+.envelope-container { perspective: 1000px; width: 280px; height: 180px; }
+.envelope { position: relative; width: 100%; height: 100%; background: #0284c7; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.envelope .flap {
+  position: absolute; top: 0; width: 0; height: 0;
+  border-left: 140px solid transparent; border-right: 140px solid transparent;
+  border-top: 90px solid #0369a1; transform-origin: top; transition: 0.5s; z-index: 3;
 }
-.letter-card h1 { font-family: 'Noto Serif KR', serif; color: #0369a1; margin-bottom: 15px; font-size: 1.6rem; }
-.open-btn {
-  margin-top: 30px; padding: 16px 45px; border-radius: 50px; border: none;
-  background: #0284c7; color: white; font-weight: bold; font-size: 1.1rem; cursor: pointer;
+.envelope.open .flap { transform: rotateX(180deg); }
+.letter {
+  position: absolute; inset: 10px; background: white; z-index: 2;
+  display: flex; align-items: center; justify-content: center; text-align: center; transition: 0.5s;
 }
+.envelope.open .letter { transform: translateY(-40px); }
+.letter-content h1 { font-size: 1.1rem; color: #0284c7; margin-bottom: 5px; }
+.letter-content p { font-size: 0.75rem; color: #666; margin-bottom: 10px; }
+.open-btn { padding: 6px 15px; border: none; background: #0284c7; color: white; border-radius: 20px; font-weight: bold; cursor: pointer; }
 
-/* [2] 메인 헤더 & 주제말씀 */
+/* [메인] 히어로 섹션 */
 .hero {
-  height: 480px; background: linear-gradient(135deg, #0284c7, #2563eb);
+  height: 450px; background: linear-gradient(135deg, #0284c7, #2563eb);
   position: relative; display: flex; justify-content: center; align-items: center; text-align: center; color: white;
 }
-.main-verse { 
-  font-family: 'Noto Serif KR', serif; font-size: 1.15rem; line-height: 1.8; margin-bottom: 25px; 
-  text-shadow: 0 2px 10px rgba(0,0,0,0.3); padding: 0 20px;
-}
-.main-verse span { font-size: 0.9rem; opacity: 0.8; display: block; margin-top: 10px; }
-.hero h2 { font-family: 'Noto Serif KR', serif; font-size: 2.1rem; }
-
+.main-verse { font-size: 1rem; line-height: 1.8; font-style: italic; }
+.main-verse span { display: block; font-size: 0.75rem; opacity: 0.8; margin-top: 10px; }
 .hero-waves { position: absolute; bottom: 0; width: 100%; line-height: 0; }
-.waves { width: 100%; height: 100px; }
-.parallax > use { animation: move-forever 20s cubic-bezier(.55,.5,.45,.5) infinite; }
+.waves { width: 100%; height: 50px; }
 
-/* [3] 인스타 3열 그리드 */
-.content-wrapper { max-width: 600px; margin: -60px auto 100px; padding: 0 10px; position: relative; z-index: 10; }
-.day-section { background: white; padding: 35px 20px; border-radius: 20px; margin-bottom: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
-.day-label { color: #0284c7; font-weight: bold; font-size: 0.85rem; }
-.day-section h3 { font-family: 'Noto Serif KR', serif; font-size: 1.4rem; margin: 10px 0 15px; }
-.essay { font-family: 'Noto Serif KR', serif; font-size: 1.05rem; line-height: 1.8; color: #475569; text-align: justify; }
-
-.insta-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 25px;
-  background-color: #f1f5f9; border-radius: 8px; overflow: hidden;
+/* [메인] 레이아웃 */
+.content-wrapper { max-width: 600px; margin: -30px auto 100px; padding: 0 15px; position: relative; z-index: 10; }
+.day-section { 
+  background: white; padding: 35px 20px; border-radius: 2px; margin-bottom: 35px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.03); border-left: 5px solid #0284c7;
 }
-.insta-grid img, .insta-grid video { width: 100%; aspect-ratio: 1/1; object-fit: cover; cursor: pointer; }
+.essay { font-size: 1rem; line-height: 1.9; color: #444; }
+.photo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 25px; }
+.photo-grid img { 
+  width: 100%; aspect-ratio: 1/1; object-fit: cover; border: 4px solid white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
 
-/* [4] 스크롤 애니메이션 */
-.reveal { opacity: 0; transform: translateY(40px); transition: all 0.9s ease-out; }
+/* 방명록 & 버튼 */
+.guestbook { background: #fffde7; padding: 25px 15px; border-radius: 2px; }
+.comment-form input, .comment-form textarea { width: 100%; margin-bottom: 8px; padding: 10px; border: 1px solid #ddd; font-family: inherit; }
+.comment-form button { width: 100%; padding: 12px; background: #34495e; color: white; border: none; font-weight: bold; }
+.comment-item { border-bottom: 1px solid #eee; padding: 12px 0; }
+
+.action-box { display: flex; flex-direction: column; gap: 8px; margin-top: 30px; }
+.share-btn, .gift-btn { padding: 14px; border-radius: 30px; font-weight: bold; cursor: pointer; text-align: center; }
+.share-btn { border: 1px solid #0284c7; background: transparent; color: #0284c7; }
+.gift-btn { background: #0284c7; color: white; border: none; }
+
+.reveal { opacity: 0; transform: translateY(20px); transition: 0.7s; }
 .reveal.active { opacity: 1; transform: translateY(0); }
+.hidden { display: none; }
 
-/* 방명록 */
-.guestbook { background: white; padding: 30px 20px; border-radius: 20px; margin-bottom: 30px; }
-.comment-form input, .comment-form textarea {
-  width: 100%; margin-bottom: 12px; padding: 12px; border: 1px solid #e2e8f0; border-radius: 10px; font-family: inherit;
-}
-.comment-form button {
-  width: 100%; padding: 15px; background: #0f172a; color: white; border: none; border-radius: 10px; font-weight: bold;
-}
-.comment-item { padding: 15px 5px; border-bottom: 1px solid #f1f5f9; }
-.comment-item strong { color: #0284c7; font-size: 0.9rem; }
-
-/* 기타 요소 */
-#top-btn {
-  position: fixed; bottom: 25px; right: 20px; width: 50px; height: 50px; background: #0284c7; color: white;
-  border-radius: 50%; border: none; font-weight: bold; display: none; z-index: 999; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-#image-modal {
-  display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 20000;
-  justify-content: center; align-items: center;
-}
-#modal-content img, #modal-content video { max-width: 95vw; max-height: 80vh; border-radius: 10px; }
-.close-modal { position: absolute; top: 20px; right: 20px; color: white; font-size: 40px; }
-
-/* 키프레임 */
-@keyframes twinkle { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.6; } }
-@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
-@keyframes move-forever { 0% { transform: translate3d(-90px,0,0); } 100% { transform: translate3d(85px,0,0); } }
-
-/* 모바일 텍스트 조정 */
-@media (max-width: 400px) {
-  .hero h2 { font-size: 1.7rem; }
-  .main-verse { font-size: 1rem; }
-}
-
-/* 모바일 앱 느낌을 위한 디테일 */
-img, video {
-  -webkit-user-drag: none;
-  -webkit-touch-callout: none;
-}
-
-input:focus, textarea:focus {
-  outline: none;
-  border-color: #0284c7;
-  box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.2);
-}
+#top-btn { position: fixed; bottom: 20px; right: 20px; width: 40px; height: 40px; background: #0284c7; color: white; border-radius: 50%; border: none; display: none; }
+#image-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 20000; justify-content: center; align-items: center; }
+#image-modal img { max-width: 90%; max-height: 80vh; }

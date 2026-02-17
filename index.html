@@ -4,24 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>통영에서 온 푸른 편지 | 1청 1진 3팀</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Noto+Sans+KR:wght@300;500&family=Gaegu&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Noto+Sans+KR:wght@300;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <div id="intro-overlay">
     <div class="stars"></div>
-    <div class="envelope-wrapper">
-      <div class="letter-card">
-        <div class="floating-icons">✨ 🌊 ✨</div>
-        <h1>통영에서 온 푸른 편지</h1>
-        <p>후원자님께 드리는<br>사역의 진심어린 기록</p>
-        <button class="open-btn" onclick="startExperience()">편지 열어보기</button>
+    <div class="envelope-container">
+      <div class="envelope" id="main-envelope">
+        <div class="flap"></div>
+        <div class="letter">
+          <div class="letter-content">
+            <span class="emoji">✨ 🌊 ✨</span>
+            <h1>통영에서 온<br>푸른 편지</h1>
+            <p>후원자님께 드리는<br>진심 어린 사역 보고</p>
+            <button class="open-btn" onclick="startExperience()">편지 읽어보기</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-
-  <audio id="bgm" loop><source src="music/background.mp3" type="audio/mpeg"></audio>
 
   <main id="main-page" class="hidden">
     <header class="hero">
@@ -35,7 +38,7 @@
       </div>
       <div class="hero-waves">
         <svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none">
-          <defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" /></defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
           <g class="parallax">
             <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.6" />
             <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
@@ -45,49 +48,48 @@
     </header>
 
     <div class="content-wrapper">
-      <section class="day-section reveal">
+      <section id="day1" class="day-section reveal">
         <span class="day-label">Day 1</span>
         <h3>1일차: 마을 심방과 복음 전도 🌊</h3>
-        <p class="essay">통영의 푸른 바다가 저희를 반겨주던 첫날, 저희는 설레는 마음보다 앞서 어르신들께 한 걸음 더 가까이 다가가기 위해 마음을 다잡았습니다. 저희의 서툰 다가감 속에서도 복음의 씨앗이 조금씩 뿌려지길 소망하며 마을 곳곳에 발자취를 남겼습니다.</p>
-        <div class="insta-grid" id="day1-gallery"></div>
+        <p class="essay">통영의 푸른 바다가 저희를 반겨주던 첫날, 저희는 설레는 마음보다 앞서 어르신들께 한 걸음 더 가까이 다가가기 위해 마음을 다잡았습니다...</p>
+        <div class="photo-grid" id="day1-gallery"></div>
       </section>
 
-      <section class="day-section reveal">
+      <section id="day2" class="day-section reveal">
         <span class="day-label">Day 2</span>
         <h3>2일차: 경로당 사역과 기도의 나무 🌳</h3>
-        <p class="essay">둘째 날은 어르신들과 온몸으로 기쁨을 나누었습니다. '무조건', '내 나이가 어때서'에 맞춰 춤을 추고 건강 박수를 치며 웃음꽃을 피웠습니다. 기도 제목을 담은 나무를 만들고 저희 사진을 남겨드려 우리를 기억하실 수 있게 했습니다.</p>
-        <div class="insta-grid" id="day2-gallery"></div>
+        <p class="essay">둘째 날은 어르신들과 온몸으로 기쁨을 나누었습니다. 주님의 사랑을 전하며 웃음꽃을 피우는 소중한 시간이었습니다...</p>
+        <div class="photo-grid" id="day2-gallery"></div>
       </section>
 
-      <section class="day-section reveal">
+      <section id="day3" class="day-section reveal">
         <span class="day-label">Day 3</span>
-        <h3>3일차: 어린이 성경학교와 레크레이션 🎈</h3>
-        <p class="essay">아이들과 '몸으로 말해요', 리듬 게임을 하며 마음의 벽을 허물었습니다. 탕자 이야기를 통해 길 잃은 아들을 기다리시는 하나님의 사랑을 전하는 소중한 시간이었습니다.</p>
-        <div class="insta-grid" id="day3-gallery"></div>
+        <h3>3일차: 어린이 성경학교와 놀이 🎈</h3>
+        <p class="essay">아이들의 맑은 웃음소리가 교회 가득 울려 퍼졌습니다. 다양한 레크레이션을 통해 아이들의 마음에 복음의 씨앗을 심었습니다...</p>
+        <div class="photo-grid" id="day3-gallery"></div>
       </section>
 
-      <section class="day-section reveal">
+      <section id="day4" class="day-section reveal">
         <span class="day-label">Day 4</span>
         <h3>4일차: 주일 예배와 말씀의 약속 📖</h3>
-        <p class="essay">마지막 날, 용남교회 성도님들과 예배하며 주님의 율법을 사랑하는 자에게는 장애물이 없다는 시편 말씀을 가슴에 새겼습니다. 여정을 지켜주신 하나님께 모든 영광을 돌립니다.</p>
-        <div class="insta-grid" id="day4-gallery"></div>
+        <p class="essay">마지막 날, 성도님들과 함께 예배하며 주님의 평안이 우리 모두에게 함께하기를 간절히 기도했습니다...</p>
+        <div class="photo-grid" id="day4-gallery"></div>
       </section>
 
       <section class="guestbook reveal">
-        <h3>💌 후원자님의 한마디</h3>
+        <h3>💌 응원 한마디 남기기</h3>
         <div class="comment-form">
           <input type="text" id="visitor-name" placeholder="이름">
-          <textarea id="visitor-msg" rows="3" placeholder="응원의 한마디를 남겨주세요!"></textarea>
-          <button onclick="addComment()">메시지 등록</button>
+          <textarea id="visitor-msg" rows="3" placeholder="메시지를 남겨주세요"></textarea>
+          <button onclick="addComment()">보내기</button>
         </div>
         <div id="comment-list"></div>
       </section>
 
-      <section class="gift-card reveal">
-        <h3>☕️ 삼문당 드립백</h3>
-        <p>통영의 향기를 담아 감사를 전합니다.</p>
-        <button class="gift-link" onclick="window.open('https://sammoondang.com')">커피 구경하기</button>
-      </section>
+      <div class="action-box reveal">
+        <button class="share-btn" onclick="shareLink()">이 편지 공유하기</button>
+        <button class="gift-btn" onclick="window.open('https://sammoondang.com')">☕️ 삼문당 커피 선물하기</button>
+      </div>
     </div>
 
     <footer>
@@ -96,80 +98,65 @@
   </main>
 
   <button id="top-btn" onclick="window.scrollTo({top:0, behavior:'smooth'})">TOP</button>
-
-  <div id="image-modal" onclick="closeModal()">
-    <span class="close-modal">&times;</span>
-    <div id="modal-content"></div>
-  </div>
+  <div id="image-modal" onclick="closeModal()"><div id="modal-content"></div></div>
 
   <script>
+    // 제공해주신 최신 사진 데이터 리스트
     const mediaData = {
-      day1: ["KakaoTalk_20260216_234826334_20.jpg", "KakaoTalk_20260216_234826334_21.jpg", "KakaoTalk_20260216_234847622_01.jpg", "KakaoTalk_20260217_140001641.mp4", "KakaoTalk_20260217_140007239.jpg", "KakaoTalk_20260217_140021572.jpg", "KakaoTalk_20260217_140040318.jpg", "KakaoTalk_20260217_140048650.jpg", "KakaoTalk_20260217_140059817.jpg"],
-      day2: ["KakaoTalk_20260216_234826334.jpg", "KakaoTalk_20260216_234826334_01.jpg", "KakaoTalk_20260216_234826334_03.jpg", "KakaoTalk_20260216_234826334_06.jpg", "KakaoTalk_20260216_234826334_22.jpg", "KakaoTalk_20260216_234826334_23.jpg", "KakaoTalk_20260216_234826334_24.jpg", "KakaoTalk_20260216_234826334_25.jpg", "KakaoTalk_20260217_000940178.jpg", "KakaoTalk_20260217_000940178_01.jpg", "KakaoTalk_20260217_000945415.jpg", "KakaoTalk_20260217_000953373.jpg", "KakaoTalk_20260217_140107129.jpg", "KakaoTalk_20260217_140224746.jpg", "KakaoTalk_20260217_140232760.jpg", "KakaoTalk_20260217_140246691.jpg", "KakaoTalk_20260217_140254741.jpg", "KakaoTalk_20260217_140303863.jpg", "KakaoTalk_20260217_140311417.jpg", "KakaoTalk_20260217_140412293.mp4", "KakaoTalk_20260217_140446580.jpg", "KakaoTalk_20260217_140707051.jpg", "KakaoTalk_20260217_140837117.jpg"],
+      day1: ["KakaoTalk_20260216_234826334_20.jpg", "KakaoTalk_20260216_234826334_21.jpg", "KakaoTalk_20260216_234847622_01.jpg", "KakaoTalk_20260217_140007239.jpg", "KakaoTalk_20260217_140021572.jpg", "KakaoTalk_20260217_140040318.jpg", "KakaoTalk_20260217_140048650.jpg", "KakaoTalk_20260217_140059817.jpg"],
+      day2: ["KakaoTalk_20260216_234826334.jpg", "KakaoTalk_20260216_234826334_01.jpg", "KakaoTalk_20260216_234826334_03.jpg", "KakaoTalk_20260216_234826334_22.jpg", "KakaoTalk_20260216_234826334_24.jpg", "KakaoTalk_20260217_000940178_01.jpg", "KakaoTalk_20260217_000945415.jpg", "KakaoTalk_20260217_000953373.jpg", "KakaoTalk_20260217_140107129.jpg", "KakaoTalk_20260217_140232760.jpg", "KakaoTalk_20260217_140254741.jpg", "KakaoTalk_20260217_140303863.jpg", "KakaoTalk_20260217_140311417.jpg", "KakaoTalk_20260217_140707051.jpg", "KakaoTalk_20260217_140837117.jpg"],
       day3: ["KakaoTalk_20260216_234826334_07.jpg", "KakaoTalk_20260216_234826334_08.jpg", "KakaoTalk_20260216_234826334_09.jpg", "KakaoTalk_20260216_234826334_10.jpg", "KakaoTalk_20260216_234826334_11.jpg", "KakaoTalk_20260216_234826334_12.jpg", "KakaoTalk_20260216_234826334_17.jpg", "KakaoTalk_20260216_234826334_19.jpg", "KakaoTalk_20260216_234826334_26.jpg", "KakaoTalk_20260216_234826334_28.jpg", "KakaoTalk_20260216_234826334_29.jpg", "KakaoTalk_20260217_001014818.jpg", "KakaoTalk_20260217_001014818_01.jpg", "KakaoTalk_20260217_001015973.jpg", "KakaoTalk_20260217_001015973_01.jpg", "KakaoTalk_20260217_001024161.jpg", "KakaoTalk_20260217_001024161_01.jpg", "KakaoTalk_20260217_001033435.jpg", "KakaoTalk_20260217_001033435_01.jpg", "KakaoTalk_20260217_001038406_01.jpg", "KakaoTalk_20260217_001055833_02.jpg", "KakaoTalk_20260217_141751784_04.jpg", "KakaoTalk_20260217_141751784_07.jpg", "KakaoTalk_20260217_141751784_08.jpg", "KakaoTalk_20260217_141751784_09.jpg", "KakaoTalk_20260217_141751784_10.jpg", "KakaoTalk_20260217_141751784_11.jpg"],
-      day4: ["KakaoTalk_20260216_234826334_13.jpg", "KakaoTalk_20260216_234826334_14.jpg", "KakaoTalk_20260216_234826334_16.jpg", "KakaoTalk_20260216_234826334_27.jpg", "KakaoTalk_20260217_141751784_01.jpg", "KakaoTalk_20260217_141751784_02.jpg", "KakaoTalk_20260217_141751784_06.jpg", "KakaoTalk_20260217_141820440.mp4"]
+      day4: ["KakaoTalk_20260216_234826334_13.jpg", "KakaoTalk_20260216_234826334_14.jpg", "KakaoTalk_20260216_234826334_16.jpg", "KakaoTalk_20260216_234826334_27.jpg", "KakaoTalk_20260217_141751784_01.jpg", "KakaoTalk_20260217_141751784_02.jpg", "KakaoTalk_20260217_141751784_06.jpg"]
     };
 
     function startExperience() {
-      document.getElementById('bgm').play().catch(e => console.log("자동재생 방지"));
-      const intro = document.getElementById('intro-overlay');
-      const main = document.getElementById('main-page');
-      intro.style.transform = 'translateY(-100%)';
-      intro.style.opacity = '0';
+      const env = document.getElementById('main-envelope');
+      env.classList.add('open');
       setTimeout(() => {
-        intro.style.display = 'none';
-        main.classList.remove('hidden');
-        main.style.opacity = '1';
-        renderAll();
-        initReveal();
-      }, 800);
+        document.getElementById('intro-overlay').style.opacity = '0';
+        setTimeout(() => {
+          document.getElementById('intro-overlay').style.display = 'none';
+          document.getElementById('main-page').classList.remove('hidden');
+          renderMedia();
+          initReveal();
+        }, 800);
+      }, 1000);
     }
 
-    function renderAll() {
+    function renderMedia() {
       Object.keys(mediaData).forEach(day => {
         const grid = document.getElementById(`${day}-gallery`);
         mediaData[day].forEach(file => {
-          const isVideo = file.endsWith('.mp4');
-          const el = document.createElement(isVideo ? 'video' : 'img');
-          el.src = `photo/${day}/${file}`;
-          if(isVideo) { el.muted = true; el.loop = true; el.autoplay = true; el.setAttribute('playsinline', ''); }
-          el.onclick = (e) => { e.stopPropagation(); openModal(el.src, isVideo); };
-          grid.appendChild(el);
+          const img = document.createElement('img');
+          img.src = `photo/${day}/${file}`;
+          img.loading = "lazy";
+          img.onclick = () => openModal(img.src);
+          grid.appendChild(img);
         });
       });
       displayComments();
     }
 
-    function openModal(src, isVideo) {
-      const modal = document.getElementById('image-modal');
-      const content = document.getElementById('modal-content');
-      content.innerHTML = isVideo ? `<video src="${src}" controls autoplay></video>` : `<img src="${src}">`;
-      modal.style.display = 'flex';
+    function openModal(src) {
+      document.getElementById('modal-content').innerHTML = `<img src="${src}">`;
+      document.getElementById('image-modal').style.display = 'flex';
     }
-
     function closeModal() { document.getElementById('image-modal').style.display = 'none'; }
 
     function initReveal() {
       const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if(entry.isIntersecting) entry.target.classList.add('active');
-        });
+        entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('active'); });
       }, { threshold: 0.1 });
       document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     }
 
-    window.onscroll = () => {
-      const topBtn = document.getElementById('top-btn');
-      topBtn.style.display = (window.scrollY > 800) ? 'block' : 'none';
-    };
-
     function addComment() {
       const name = document.getElementById('visitor-name').value;
       const msg = document.getElementById('visitor-msg').value;
-      if(!name || !msg) return alert("이름과 메시지를 입력해 주세요!");
-      const comments = JSON.parse(localStorage.getItem('tongyeong_msgs') || '[]');
-      comments.push({ name, msg });
-      localStorage.setItem('tongyeong_msgs', JSON.stringify(comments));
+      if(!name || !msg) return alert("내용을 입력해주세요!");
+      const msgs = JSON.parse(localStorage.getItem('ty_msgs') || '[]');
+      msgs.push({name, msg});
+      localStorage.setItem('ty_msgs', JSON.stringify(msgs));
       displayComments();
       document.getElementById('visitor-name').value = '';
       document.getElementById('visitor-msg').value = '';
@@ -177,10 +164,12 @@
 
     function displayComments() {
       const list = document.getElementById('comment-list');
-      const comments = JSON.parse(localStorage.getItem('tongyeong_msgs') || '[]');
-      list.innerHTML = comments.reverse().map(c => `
-        <div class="comment-item"><strong>${c.name}</strong><p>${c.msg}</p></div>
-      `).join('');
+      const msgs = JSON.parse(localStorage.getItem('ty_msgs') || '[]');
+      list.innerHTML = msgs.reverse().map(m => `<div class="comment-item"><strong>${m.name}</strong><p>${m.msg}</p></div>`).join('');
+    }
+
+    function shareLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => alert("링크가 복사되었습니다!"));
     }
   </script>
 </body>

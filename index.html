@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>통영에서 온 푸른 편지 | 1청 1진 3팀</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Gamja+Flower&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="intro-overlay">
+    <div class="stars"></div>
+    <div class="opening-content">
+      <div class="letter-tag">A Letter from Tongyeong</div>
+      <h1 class="main-title">통영에서 온<br>푸른 편지</h1>
+      <p class="sub-title">1청 1진 3팀 사역 보고서</p>
+      <button class="open-btn" onclick="startExperience()">편지 읽어보기</button>
+    </div>
+  </div>
+
+  <audio id="bgm" loop preload="auto">
+    <source src="music/background.mp3" type="audio/mpeg">
+  </audio>
+
+  <main id="main-page" class="hidden">
+    <header class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-text">
+        <p class="sub-label">1청 1진 3팀</p>
+        <h1 class="main-thanks">"당신의 후원을 통해 통영에<br>하나님의 사랑을 전하고 왔습니다"</h1>
+        <div class="divider"></div>
+        <p class="main-verse">
+          "두세 사람이 내 이름으로 모인 곳에는<br>
+          나도 그들 중에 있느니라" <span>(마태복음 18:20)</span>
+        </p>
+      </div>
+      <div class="hero-waves">
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none">
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+          <g class="parallax">
+            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.6" />
+            <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+          </g>
+        </svg>
+      </div>
+    </header>
+
+    <div class="content-wrapper">
+      
+      <section id="day1" class="day-section reveal">
+        <span class="day-label">Day 1</span>
+        <h3>1일차 사역 : 마을 노방 전도</h3>
+        <p class="essay">
+          첫날에는 마을 어르신들을 대상으로 노방 전도를 했어요! 고소한 김치전을 부쳐드리며 찾아뵈었더니 저희를 "친손주들 같다"며 반겨주시는 모습에 마음이 찡했습니다. 오랜만에 젊은이들을 보니 에너지가 솟는다며 좋아하시는 어르신들 덕분에, 섬기러 간 저희가 오히려 더 큰 사랑을 채움 받는 시간이었습니다.
+        </p>
+        <div class="photo-grid" id="day1-gallery"></div>
+      </section>
+
+      <section id="day2" class="day-section reveal">
+        <span class="day-label">Day 2</span>
+        <h3>2일차 사역 : 어린이 노방 전도 및 경로당 사역</h3>
+        <p class="essay">
+          "내 나이가 어때서~ 사랑하기 딱 좋은 나인데!"<br>
+          경로당이 들썩들썩! 트로트 무대와 건강박수로 어르신들과 하나가 되었습니다. 저희 손을 잡고 덩실덩실 춤추시는 표정이 얼마나 신나 보이던지요.<br>
+          아이들을 만나 룰렛 전도를 할 때도 1등 상품이 나오자 폴짝폴짝 뛰며 기뻐하던 그 순수한 모습들이 아직도 눈에 선합니다.
+        </p>
+        <div class="photo-grid" id="day2-gallery"></div>
+      </section>
+
+      <section id="day3" class="day-section reveal">
+        <span class="day-label">Day 3</span>
+        <h3>3일차 사역 : 겨울성경학교 </h3>
+        <p class="essay">
+          교회 가득 아이들의 웃음소리가 터져 나왔습니다. '몸으로 말해요', '리듬게임'을 하며 배꼽을 잡고 웃고, 신나게 율동하니 어느새 아이들과 단짝이 되어 있었죠.<br>
+          장난기 넘치던 아이들도 '돌아온 탕자' 이야기를 들을 때만큼은 숨을 죽이고 집중하는 모습이 얼마나 귀엽고 기특했는지 모릅니다.
+        </p>
+        <div class="photo-grid" id="day3-gallery"></div>
+      </section>
+
+      <section id="day4" class="day-section reveal">
+        <span class="day-label">Day 4</span>
+        <h3>4일차 사역 : 주일 예배 및 사역 보고</h3>
+        <p class="essay">
+          "주의 법을 사랑하는 자에게는 큰 평안이 있으니 그들에게 장애물이 없으리이다" (시편 119:165)<br>
+          목사님께서 들려주신 하나님의 형통한 약속을 마음에 새기며 마지막 예배를 드렸습니다. 떠나는 저희 옷자락을 붙잡으며 "가지 마세요"라고 하던 아이들 때문에 발걸음이 떨어지지 않았네요.<br>
+          좋은 날씨 속에 귀한 사역 허락하심에 감사한 여정이었습니다.
+        </p>
+        <div class="photo-grid" id="day4-gallery"></div>
+      </section>
+
+      <section class="thanks-message reveal">
+        <div class="message-card">
+          <p class="essay">
+            보내주신 소중한 후원에 감사하며, 통영의 향기를 담은 <b>'삼문당 커피 블렌딩'</b>을 준비했습니다.<br><br>
+            커피를 마시며 선교의 여운과 하나님의 사랑을 함께 누리시길 소망합니다. 
+            <span class="highlight-text">(※ 드립백은 저희가 직접 전달해 드릴 예정입니다!)</span>
+          </p>
+        </div>
+      </section>
+
+      <div class="action-box reveal">
+        <button class="share-btn" onclick="shareLink()">사역 보고 공유하기</button>
+        <button class="gift-btn" onclick="window.open('https://sammoondang.com/product/%EC%82%BC%EB%AC%B8%EB%8B%B9-%EB%93%9C%EB%A6%BD%EB%B0%B1/28/category/26/display/1/')">☕️ 삼문당 블렌딩 보러가기</button>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 삼일교회 1청 1진 3팀 · 통영 사역 보고</p>
+    </footer>
+  </main>
+
+  <div id="image-modal" onclick="closeModal()"><div id="modal-content"></div></div>
+
+  <script>
+    const mediaData = {
+      day1: ["KakaoTalk_20260216_234826334_20.jpg", "KakaoTalk_20260216_234826334_21.jpg", "KakaoTalk_20260216_234847622_01.jpg", "KakaoTalk_20260217_140007239.jpg", "KakaoTalk_20260217_140021572.jpg", "KakaoTalk_20260217_140040318.jpg", "KakaoTalk_20260217_140048650.jpg", "KakaoTalk_20260217_140059817.jpg"],
+      day2: ["KakaoTalk_20260216_234826334.jpg", "KakaoTalk_20260216_234826334_01.jpg", "KakaoTalk_20260216_234826334_03.jpg", "KakaoTalk_20260216_234826334_22.jpg", "KakaoTalk_20260216_234826334_24.jpg", "KakaoTalk_20260217_000940178_01.jpg", "KakaoTalk_20260217_000945415.jpg", "KakaoTalk_20260217_000953373.jpg", "KakaoTalk_20260217_140107129.jpg", "KakaoTalk_20260217_140232760.jpg", "KakaoTalk_20260217_140254741.jpg", "KakaoTalk_20260217_140303863.jpg", "KakaoTalk_20260217_140311417.jpg", "KakaoTalk_20260217_140707051.jpg", "KakaoTalk_20260217_140837117.jpg"],
+      day3: ["KakaoTalk_20260216_234826334_07.jpg", "KakaoTalk_20260216_234826334_08.jpg", "KakaoTalk_20260216_234826334_09.jpg", "KakaoTalk_20260216_234826334_10.jpg", "KakaoTalk_20260216_234826334_11.jpg", "KakaoTalk_20260216_234826334_12.jpg", "KakaoTalk_20260216_234826334_17.jpg", "KakaoTalk_20260216_234826334_19.jpg", "KakaoTalk_20260216_234826334_26.jpg", "KakaoTalk_20260216_234826334_28.jpg", "KakaoTalk_20260216_234826334_29.jpg", "KakaoTalk_20260217_001014818.jpg", "KakaoTalk_20260217_001014818_01.jpg", "KakaoTalk_20260217_001015973.jpg", "KakaoTalk_20260217_001055833_02.jpg"],
+      day4: ["KakaoTalk_20260216_234826334_13.jpg", "KakaoTalk_20260216_234826334_14.jpg", "KakaoTalk_20260216_234826334_16.jpg", "KakaoTalk_20260216_234826334_27.jpg", "KakaoTalk_20260217_141751784_01.jpg", "KakaoTalk_20260217_141751784_02.jpg", "KakaoTalk_20260217_141751784_06.jpg"]
+    };
+
+    function startExperience() {
+      const bgm = document.getElementById('bgm');
+      bgm.play().catch(e => console.log("Audio play blocked"));
+      document.getElementById('intro-overlay').style.opacity = '0';
+      setTimeout(() => {
+        document.getElementById('intro-overlay').style.display = 'none';
+        document.getElementById('main-page').classList.remove('hidden');
+        renderMedia();
+        initReveal();
+      }, 1000);
+    }
+
+    function renderMedia() {
+      Object.keys(mediaData).forEach(day => {
+        const grid = document.getElementById(`${day}-gallery`);
+        if(!grid) return;
+        mediaData[day].forEach(file => {
+          const img = document.createElement('img');
+          img.src = `photo/${day}/${file}`;
+          img.loading = "lazy";
+          img.onclick = () => openModal(img.src);
+          grid.appendChild(img);
+        });
+      });
+    }
+
+    function openModal(src) {
+      document.getElementById('modal-content').innerHTML = `<img src="${src}">`;
+      document.getElementById('image-modal').style.display = 'flex';
+    }
+    function closeModal() { document.getElementById('image-modal').style.display = 'none'; }
+    function initReveal() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('active'); });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    }
+    function shareLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => alert("링크가 복사되었습니다!"));
+    }
+  </script>
+</body>
+</html>
